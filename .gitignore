@@ -1,0 +1,7 @@
+build
+dist
+rambenchmark.egg-info
+*.svg
+*.bak.py
+*.so
+*.pyc

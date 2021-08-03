@@ -1,3 +1,19 @@
+<p align="center">
+    <img src="https://github.com/rsusik/rambenchmark/raw/master/rambenchmark.png" alt="Ram Benchmark" />
+</p>
+<p align="center">
+    <em>Simple RAM benchmark for Linux.</em>
+</p>
+<p align="center">
+<a href="https://pypi.org/project/rambenchmark" target="_blank">
+    <img src="https://img.shields.io/pypi/v/rambenchmark?color=%2334D058&label=pypi%20package" alt="Package version">
+</a>
+<a href="https://github.com/rsusik/rambenchmark/blob/master/LICENSE" target="_blank">
+    <img src="https://img.shields.io/github/license/rsusik/rambenchmark" alt="Package version">
+</a>
+</p>
+
+
 # Simple RAM Benchmark
 This is a simple RAM benchmark written ad-hoc. It allows to check approximate RAM speed. The code creates 1 GiB (1024\*1024\*1024 bytes) buffer and fill it with zeroes, scans the buffer and mesure the time.
 
@@ -62,7 +78,3 @@ RESULT of scanning 1GiB buffer.
 
 ======================================================================
 ```
-
-
-## Authors
-* Robert Susik
