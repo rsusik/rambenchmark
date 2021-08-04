@@ -25,15 +25,12 @@ This is a simple RAM benchmark written ad-hoc. It allows to check approximate RA
 * at least 1 GB free RAM (for buffer)
 
 ## Running
-To execute the benchmark you only have to meet the requirements and run below command:
+To execute the benchmark you only have to meet the requirements and run below commands:
 ```shell
-make benchmark
+pip install rambenchmark
+rambenchmark
 ```
 
-It will compile the code and execute the benchmark. To only compile run:
-```shell
-make all
-```
 
 ## Tests
 The benchmark uses two functions for tests:
