@@ -1,7 +1,7 @@
 import sys, io, platform
 from setuptools import setup, find_packages, Extension
 
-__version__ = "1.2"
+__version__ = "1.3"
 
 def get_requirements():
     with open("requirements.txt") as fp:
