@@ -1,4 +1,4 @@
-#include <pybind11/pybind11.h>
+// #include <pybind11/pybind11.h>
 #include<malloc.h>
 #include<stdio.h>
 #include<stdlib.h>
@@ -200,27 +200,27 @@ int main() {
 
 
 
-namespace py = pybind11;
+// namespace py = pybind11;
 
-PYBIND11_MODULE(rambench, m) {
-    m.doc() = R"pbdoc(
-        Pybind11 example plugin
-        -----------------------
-        .. currentmodule:: python_example
-        .. autosummary::
-           :toctree: _generate
-           add
-           subtract
-    )pbdoc";
+// PYBIND11_MODULE(rambench, m) {
+//     m.doc() = R"pbdoc(
+//         Pybind11 example plugin
+//         -----------------------
+//         .. currentmodule:: python_example
+//         .. autosummary::
+//            :toctree: _generate
+//            add
+//            subtract
+//     )pbdoc";
 
-    m.def("perform_benchmark", &perform_benchmark, R"pbdoc(
-        Add two numbers
-        Some other explanation about the add function.
-    )pbdoc");
+//     m.def("perform_benchmark", &perform_benchmark, R"pbdoc(
+//         Add two numbers
+//         Some other explanation about the add function.
+//     )pbdoc");
 
-#ifdef VERSION_INFO
-    m.attr("__version__") = MACRO_STRINGIFY(VERSION_INFO);
-#else
-    m.attr("__version__") = "dev";
-#endif
-}
+// #ifdef VERSION_INFO
+//     m.attr("__version__") = MACRO_STRINGIFY(VERSION_INFO);
+// #else
+//     m.attr("__version__") = "dev";
+// #endif
+// }
