@@ -1,5 +1,5 @@
 <p align="center">
-    <img src="https://github.com/rsusik/rambenchmark/raw/master/rambenchmark.png" alt="Ram Benchmark" />
+    <img src="https://github.com/rsusik/rambenchmark/raw/master/rambenchmark.png" alt="RAM Benchmark" />
 </p>
 <p align="center">
     <em>Simple RAM benchmark for Linux.</em>
@@ -15,22 +15,32 @@
 
 
 # Simple RAM Benchmark
-This is a simple RAM benchmark written ad-hoc. It allows to check approximate RAM speed. The code creates 1 GiB (1024\*1024\*1024 bytes) buffer and fill it with zeroes, scans the buffer and mesure the time.
+This is a simple RAM benchmark written in C++. 
+It allows checking approximate RAM speed. The code creates a 1 GiB (1024\*1024\*1024 bytes) buffer, fills it with zeroes, 
+scans the buffer, and measure the time.
 
-*Note: This is only experimental code written to check the RAM speed on Linux. There are probably better tools available like memtest86.*
+*Note: This is only experimental code written to check the RAM speed on Linux. There are probably better tools for memory analysis available like memtest86.*
 
 ## Requirements
 * Unix/Linux OS (can be easily ported to Windows)
 * g++ compiler compatible with OpenMP (for multi-threaded variant)
 * at least 1 GB free RAM (for buffer)
 
-## Running
-To execute the benchmark you only have to meet the requirements and run below commands:
+## Install and run using pip
+To execute the benchmark, you only have to meet the requirements and run the below commands:
 ```shell
 pip install rambenchmark
 rambenchmark
 ```
 
+## Compile and run manually
+If you prefer to compile and execute the code manually, you can do that by running the following commands:
+```shell
+git clone git@github.com:rsusik/rambenchmark.git
+cd rambenchmark/rambenchmark
+g++ -O3 -std=c++11 -fopenmp -o rambench ./rambench.cpp
+./rambench
+```
 
 ## Tests
 The benchmark uses two functions for tests:

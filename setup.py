@@ -1,11 +1,7 @@
 import sys, io, platform
 from setuptools import setup, find_packages, Extension
 
-# Available at setup time due to pyproject.toml
-# from pybind11.setup_helpers import Pybind11Extension, build_ext
-# from pybind11 import get_cmake_dir
-
-__version__ = "1.1"
+__version__ = "1.2"
 
 def get_requirements():
     with open("requirements.txt") as fp:
@@ -20,16 +16,13 @@ if sys.version_info >= (3,) and platform.python_implementation() == 'CPython':
     else:
         class bdist_wheel(wheel.bdist_wheel.bdist_wheel):
             def finalize_options(self):
-                # self.py_limited_api = f'cp3{sys.version_info[1]}'#WON'T WORK IN OLDER VERSION OF PYTHON 
                 self.py_limited_api = 'cp3{}'.format(sys.version_info[1])
                 return super().finalize_options()
         cmdclass = {'bdist_wheel': bdist_wheel}
 
 ext_modules = [
-    #Pybind11Extension("rambench",
     Extension("rambench",
         ["rambenchmark/_rambench.cpp", "rambenchmark/rambench.cpp"],
-        # Example: passing in the version to the compiled code
         define_macros = [
             ('VERSION_INFO', __version__),
             ('Py_LIMITED_API', None)
@@ -48,7 +41,7 @@ setup(
     author_email="robert.susik@gmail.com",
     url="https://github.com/rsusik/rambenchmark",
         description=(
-        "Screen annotation software which allows drawing directly on the screen."
+        "RAM memory benchmark."
     ),
     long_description=io.open("README.md", encoding="utf-8").read(),
     long_description_content_type="text/markdown",
@@ -61,7 +54,6 @@ setup(
     },
     package_dir={"": "."},
     packages = find_packages("."),
-    #cmdclass={"build_ext": build_ext},
     cmdclass=cmdclass,
     zip_safe=False,
     classifiers=[

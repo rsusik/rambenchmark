@@ -1,5 +1,5 @@
 
-#ifndef RAMBENCH_HPP_   /* Include guard */
+#ifndef RAMBENCH_HPP
 #define RAMBENCH_HPP_
 void perform_benchmark();
-#endif // RAMBENCH_HPP_
+#endif // RAMBENCH_HPP
